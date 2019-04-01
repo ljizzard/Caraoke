@@ -1,16 +1,10 @@
 class Song
 
-  attr_reader :song_list
+  attr_reader :title
 
-  def initialize(song_list)
-    @song_list = []
+  def initialize(title)
+    @title = title
   end
 
-def add_to_song_list
-  @song_list.push(@song)
-end
 
-def clear_song_list()
-  @song_list.clear()
-end
 end

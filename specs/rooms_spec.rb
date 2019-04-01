@@ -7,7 +7,8 @@ require_relative("../guests")
 class RoomsTest < MiniTest::Test
 
   def setup()
-    @rooms = Rooms.new(@song_list)
+
+    @rooms = Rooms.new(@song_list, 25)
     @song1 = Song.new("Oklahoma")
     @song2 = Song.new("Twinkle little star")
     @song3 = Song.new("Battery")
@@ -16,7 +17,7 @@ class RoomsTest < MiniTest::Test
     @guest1 = Guest.new("Matthew",4, 100, "Swamped")
     @guest2 = Guest.new("Cameron",7, 250, "Oklahoma")
     @guest3 = Guest.new("Dagin", 6, 500, "I want to break free")
-    @room_space = Rooms.new(25)
+
 
 
 
@@ -38,11 +39,11 @@ class RoomsTest < MiniTest::Test
   end
 
   def test_room_has_enough_space_true
-    assert_equal(true,@guest1.number_in_group?(@room_space))
+    assert_equal(true,@guest1.number_in_group(@room_space))
   end
 
   def test_room_has_enough_space_false
-    assert_equal(false,@guest2.number_in_group?(@room_space))
+    assert_equal(false,@guest2.number_in_group(@room_space))
   end
 
   def test_add_guest_to_room
